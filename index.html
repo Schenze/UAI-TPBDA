@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+        <title>Tablero Principal</title>
+        <link rel="stylesheet" href="normalize.css">
+        <link rel="stylesheet" href="styles.css">
+    </head>
+	<body>
+		<main>
+			<section id="TableroPrincipal">
+				<div>Vehiculos en stock: </div>
+				<div class="stockVehiculos">-</div>
+			</section>
+			<!-- <section id="ListaVehiculos> -->
+				<!-- <div class ="MostrarStock">-</div> -->
+				<!-- <div class ="MostrarProvincia">-</div> -->
+				<!-- <div class ="MostrarLocalidad">-</div> -->
+			<!-- </section> -->
+			<section id="ListaVehiculos">
+				<label for="vehiculoNombre">Nombre: </label>
+				<div class="vehiculoNombre">-</div>
+				<label for="vehiculoChasis">Chasis: </label>
+				<div class="vehiculoChasis">-</div>
+				<label for="vehiculoTipoMotor">Motor: </label>
+				<div class="vehiculoTipoMotor">-</div>
+			</section>
+			<section id="Opciones">
+				<label for="inputMinimoStock">Minimo Stock para la alerta: </label>
+				<input type="text" id="inputMinimoStock" placeholder="Unidades">
+				<label for="inputFiltroProvincia">Filtrar Por Provincia</label>
+				<select name="FiltroProvincia" id="inputFiltroProvincia">
+					<option value="todo">-</option>
+					<option value="santafe">Santa Fe</option>
+					<option value="bsas">Buenos Aires</option>
+					<option value="cordoba">Cordoba</option>
+				</select>
+				<label for="inputFiltroLocalidad">Filtrar Por Localidad</label>
+				<select name="FiltroLocalidad" id="inputFiltroLocalidad">
+					<option value="todo">-</option>
+					<option value="rosariosf">Rosario</option>
+					<option value="rojasbsas">Rojas</option>
+					<option value="cordobaciudadc">Cordoba Ciudad</option>
+				</select>
+			</section>
+		</main>
+	</body>
+</html>
