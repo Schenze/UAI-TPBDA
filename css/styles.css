@@ -1,0 +1,51 @@
+#TableroPrincipal
+{
+	display:flex;
+	justify-content: flex-start;
+	/*background-color: white;*/
+	color: gold;
+	font-size: 20px;
+	font-family:Arial;
+}
+#ListaVehiculos
+{
+	display:flex;
+	color: gold;
+	justify-content:space-around;
+	flex-direction:column;
+	/*background-color: white;*/
+	font-size: 20px;
+	font-family:Arial;
+}
+#Opciones
+{
+	display:flex;
+	justify-content:center;
+	color:gold;
+	font-family:Arial;
+}
+main
+{
+	display:flex;
+	position:fixed;
+	flex-direction:column;
+	align-items:center;
+	justify-content:center;
+	/*background-color: white;*/
+	width: 1000px; /*fit content para que todo quepe en la caja */
+    height: 600px;
+    border: 10px green;
+}
+body {
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:flex-start;
+  margin: 0;
+  height: 0px;
+  background-image: url('../GT3LogoBackground.jpg');
+  background-size:100%;
+  background-origin:content-box;
+  background-repeat:no-repeat;
+  background-position: 100% 15%;
+}
