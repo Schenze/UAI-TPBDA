@@ -13,6 +13,7 @@ async function loginAcceder()
         mensaje.textContent = 'Login exitoso';
         mensaje.style.color = 'green';
 		console.log("good login! :)");
+		cambiarPagina();
       } else {
         mensaje.textContent = 'Usuario o contrasenia incorrectos';
         mensaje.style.color = 'purple';
@@ -28,5 +29,12 @@ async function calcularMD5(text) {
   const hashArray = Array.from(new Uint8Array(hashBuffer));
   const hashHex = hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
   return hashHex;
+}
+
+function cambiarPagina()
+{
+	const mensaje = document.getElementById('advertencia');
+	mensaje.textContent = "Login exitoso, entrando...";
+	window.location.href="index.html";
 }
 document.querySelector("#inputIngresar").addEventListener("click",loginAcceder)
