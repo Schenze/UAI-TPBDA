@@ -11,10 +11,11 @@
 {
 	display:flex;
 	color: gold;
-	justify-content:space-around;
-	flex-direction:column;
+	justify-content:space-between;
+	flex-direction:row;
 	/*background-color: white;*/
 	font-size: 20px;
+	min-width: 60%;
 	font-family:Arial;
 }
 #Opciones
@@ -23,6 +24,7 @@
 	justify-content:center;
 	color:gold;
 	font-family:Arial;
+	border-bottom: 50px;
 }
 main
 {
