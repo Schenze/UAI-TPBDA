@@ -9,7 +9,7 @@ async function testConnexionDB()
             console.log("Error de conexión:", err.message);
         }
 }
-
+testConnexionDB();
 async function LeerLocalidadDB() {
     console.log("dentro de LeerLocalidadDB")
     function filtrarPorLocalidad() {
