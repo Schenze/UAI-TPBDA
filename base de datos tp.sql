@@ -1,12 +1,3 @@
--- =====================================================================
--- Base de datos: Stock de vehículos GT3 (UAI - TPBDA)
--- Motor: Microsoft SQL Server 2016+ (T-SQL)
--- Deriva del front-end del repo:
---   login.html  -> tabla usuario
---   index.html  -> vehículos en stock (nombre, chasis, tipo de motor),
---                  filtro por provincia/localidad y stock mínimo para alerta
--- Ejecutar completo en SSMS / Azure Data Studio.
--- =====================================================================
 
 IF DB_ID('GT3') IS NOT NULL
 BEGIN
@@ -154,10 +145,6 @@ SELECT COUNT(*) AS vehiculos_en_stock
 FROM vehiculo
 WHERE estado = 'EN_STOCK';
 GO
-
--- ---------------------------------------------------------------------
--- 7. Datos de ejemplo (las provincias/localidades del <select> del front)
--- ---------------------------------------------------------------------
 INSERT INTO provincia (nombre) VALUES (N'Santa Fe'), (N'Buenos Aires'), (N'Córdoba');
 
 INSERT INTO localidad (id_provincia, nombre) VALUES
@@ -187,15 +174,5 @@ INSERT INTO vehiculo (chasis, id_modelo, id_sucursal, estado, fecha_ingreso, fec
     ('WP0ZZZ99ZNS100005', 2, 3, 'EN_STOCK', '2026-05-20', NULL),
     ('WP0ZZZ99ZNS100006', 1, 3, 'VENDIDO',  '2026-02-01', '2026-06-15');
 
--- Usuario de ejemplo. El hash es un placeholder: la aplicación debe generar
--- el hash real con bcrypt/argon2 (no usar HASHBYTES sin sal para contraseñas).
 INSERT INTO usuario (login, password_hash) VALUES ('admin', 'REEMPLAZAR_POR_HASH_BCRYPT');
 GO
-
--- ---------------------------------------------------------------------
--- 8. Consultas de ejemplo para el front
--- ---------------------------------------------------------------------
--- Total:                      SELECT * FROM v_total_stock;
--- Lista filtrada (Provincia): SELECT nombre, chasis, motor FROM v_vehiculos_en_stock WHERE provincia = N'Santa Fe';
--- Lista filtrada (Localidad): SELECT nombre, chasis, motor FROM v_vehiculos_en_stock WHERE localidad = N'Rosario';
--- Alertas:                    SELECT * FROM v_stock_por_sucursal WHERE alerta = 1;
