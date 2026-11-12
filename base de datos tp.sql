@@ -8,17 +8,17 @@
 -- Ejecutar completo en SSMS / Azure Data Studio.
 -- =====================================================================
 
-IF DB_ID('GT3') IS NOT NULL
+IF DB_ID('dbnegocio') IS NOT NULL
 BEGIN
-    ALTER DATABASE GT3 SET SINGLE_USER WITH ROLLBACK IMMEDIATE;
-    DROP DATABASE GT3;
+    ALTER DATABASE dbnegocio SET SINGLE_USER WITH ROLLBACK IMMEDIATE;
+    DROP DATABASE dbnegocio;
 END
 GO
 
-CREATE DATABASE GT3;
+CREATE DATABASE dbnegocio;
 GO
 
-USE GT3;
+USE dbnegocio;
 GO
 
 -- ---------------------------------------------------------------------

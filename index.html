@@ -27,11 +27,8 @@
 					<option value="cordoba">Cordoba</option>
 				</select>
 				<label for="inputFiltroLocalidad">Filtrar Por Localidad</label>
-				<select name="FiltroLocalidad" id="inputFiltroLocalidad">
+				<select name="FiltroLocalidad" id="inputFiltroLocalidad" onchange="DBMostrarlocalidad()">
 					<option value="todo">-</option>
-					<option value="rosariosf">Rosario</option>
-					<option value="rojasbsas">Rojas</option>
-					<option value="cordobaciudadc">Cordoba Ciudad</option>
 				</select>
 			</section>
 			<section id="ListaVehiculos">
@@ -49,5 +46,6 @@
 				</ul>
 			</section>
 		</main>
+		<script defer src="scripts/scriptNavegadorSQL.js"></script>
 	</body>
 </html>

@@ -1,0 +1,17 @@
+1- tener el servicio de SQL activo
+2- npm install mssql dotenv en la consola npm install express tambien esto
+3- Comprobar que este port este abierto con powershell--> netstat -an | findstr 1433
+4- Sino ir a SQL SERVER CONFIGURATION MANAGER --> SQL server network configuration --> activar TCP/IP
+5- Añadir un nuevo login, por que se necesita mas dependencias para hacerlo desde el windows auth.
+CREATE LOGIN userroot WITH PASSWORD = 'password';
+GO
+USE dbnegocio;
+GO
+CREATE USER userroot FOR LOGIN userroot;
+ALTER ROLE db_owner ADD MEMBER userroot;
+GO
+Esto crea un user db owner para que sea nuestra mula de pruebas
+6-Ver si la instancia es la default con:
+SELECT @@SERVERNAME AS Servidor, 
+       SERVERPROPERTY('InstanceName') AS Instancia,
+       SERVERPROPERTY('ProductVersion') AS Version;
