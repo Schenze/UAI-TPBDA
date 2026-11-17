@@ -1,4 +1,4 @@
-import { getConnection, mssql } from "./SQLconnect.js";
+import {getConnection,mssql} from "./SQLconnect.js";
 
 const getLocalidad = async () => {
     try{

@@ -1,5 +1,4 @@
-"use strict";
-const sql = require("mssql");
+import mssql from "mssql";
 
 const config = {
     user: "userroot",
@@ -11,7 +10,7 @@ const config = {
     }
 };
 
-async function getConnection()
+export async function getConnection()
 {
         try
         {
@@ -20,16 +19,6 @@ async function getConnection()
             console.log("Error de conexión:");
             console.log(error);
         }
-}
+};
 
-const getLocalidad = async () => {
-    try{
-        const pool = await getConnection();
-        const resultado = await pool.request().query("SELECT id_localidad, id_provincia, nombre FROM localidad");
-        console.table(resultado.recordset);
-        await pool.close();
-    }catch(error){
-        console.error(error);
-    }
-}
-getLocalidad();
+export{mssql};

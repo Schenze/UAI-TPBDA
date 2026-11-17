@@ -1,3 +1,15 @@
+import mssql from "mssql";
+
+const config = {
+    user: "userroot",
+    password: "password",
+    server: "localhost",
+    database: "dbnegocio",
+    options: {
+        trustServerCertificate: true
+    }
+};
+
 async function testConnexionDB()
 {
         try
@@ -29,9 +41,4 @@ async function LeerLocalidadDB() {
             });
         })
         .catch(err => console.error("Error al cargar localidades:", err));    
-}
-
-document.addEventListener("DOMContentLoaded", () => {
-    const select = document.getElementById("inputFiltroLocalidad");
-    select.addEventListener("change", inputFiltroLocalidad);
-});
+};
