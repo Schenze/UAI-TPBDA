@@ -1,5 +1,6 @@
 import mssql from "mssql";
 
+
 const config = {
     user: "userroot",
     password: "password",

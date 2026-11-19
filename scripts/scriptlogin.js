@@ -35,6 +35,6 @@ function cambiarPagina()
 {
 	const mensaje = document.getElementById('advertencia');
 	mensaje.textContent = "Login exitoso, entrando...";
-	window.location.href="index.html";
+	window.location.href="http://localhost:3000";
 }
 document.querySelector("#inputIngresar").addEventListener("click",loginAcceder)

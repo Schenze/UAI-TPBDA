@@ -22,9 +22,6 @@
 				<label for="inputFiltroProvincia">Filtrar Por Provincia</label>
 				<select name="FiltroProvincia" id="inputFiltroProvincia">
 					<option value="todo">-</option>
-					<option value="santafe">Santa Fe</option>
-					<option value="bsas">Buenos Aires</option>
-					<option value="cordoba">Cordoba</option>
 				</select>
 				<label for="inputFiltroLocalidad">Filtrar Por Localidad</label>
 				<select name="FiltroLocalidad" id="inputFiltroLocalidad" onchange="DBMostrarlocalidad()">
@@ -47,5 +44,6 @@
 			</section>
 		</main>
 		<script defer src="scripts/scriptNavegadorSQL.js"></script>
+		<script type="module" src="scripts/scriptBD.js"></script>
 	</body>
 </html>

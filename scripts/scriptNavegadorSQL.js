@@ -1,44 +1,31 @@
-import mssql from "mssql";
-
-const config = {
-    user: "userroot",
-    password: "password",
-    server: "localhost",
-    database: "dbnegocio",
-    options: {
-        trustServerCertificate: true
-    }
-};
-
-async function testConnexionDB()
-{
-        try
-        {
-            const pool = await sql.connect(config);
-            console.log("¡Conexión exitosa!");
-            await pool.close();
-        }catch(err){
-            console.log("Error de conexión:", err.message);
+fetch("/datos/provincia?columnas=id_provincia,nombre")
+    .then(r => {
+        if (!r.ok) throw new Error("Error " + r.status);
+        return r.json();
+    })
+    .then(provincias => {
+        const select = document.getElementById("inputFiltroProvincia");
+        for (const p of provincias) {
+            const option = document.createElement("option");
+            option.textContent = p.nombre;
+            option.value = p.id_provincia;
+            select.appendChild(option);
         }
-}
-testConnexionDB();
-async function LeerLocalidadDB() {
-    console.log("dentro de LeerLocalidadDB")
-    function filtrarPorLocalidad() {
-        console.log("Eligió:", select.value);
-    }
+    })
+    .catch(console.error);
 
-    select.addEventListener("change", filtrarPorLocalidad);
-
-    fetch("/localidades")
-        .then(r => r.json())
-        .then(localidades => {
-            localidades.forEach(l => {
-                const option = document.createElement("option");
-                option.value = l.nombre;
-                option.textContent = l.nombre;
-                select.appendChild(option);
-            });
-        })
-        .catch(err => console.error("Error al cargar localidades:", err));    
-};
+fetch("/datos/localidad?columnas=id_localidad,id_provincia,nombre")
+    .then(r => {
+        if (!r.ok) throw new Error("Error " + r.status);
+        return r.json();
+    })
+    .then(localidades => {
+        const select = document.getElementById("inputFiltroLocalidad");
+        for (const l of localidades) {
+            const option = document.createElement("option");
+            option.textContent = l.nombre;
+            option.value = l.id_localidad;
+            select.appendChild(option);
+        }
+    })
+    .catch(console.error);

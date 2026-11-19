@@ -15,3 +15,5 @@ Esto crea un user db owner para que sea nuestra mula de pruebas
 SELECT @@SERVERNAME AS Servidor, 
        SERVERPROPERTY('InstanceName') AS Instancia,
        SERVERPROPERTY('ProductVersion') AS Version;
+
+hay que abrir la pagina en http://localhost:3000
